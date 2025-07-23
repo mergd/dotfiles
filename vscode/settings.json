@@ -1,0 +1,123 @@
+{
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "javascript": "javascript",
+    "css": "css"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwind-class-sorter.classRegex": {
+    "rescript": [
+      "className\\w*?=\\w*(\"[\\s\\S]+?\")|className\\w*?=\\w*?\\{([\\s\\S]+?)\\}",
+      "\"(.+?)\""
+    ]
+  },
+  "workbench.settings.editor": "json",
+  "python.terminal.activateEnvironment": false,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.explorerKind": "external",
+  "workbench.sideBar.location": "right",
+  "editor.inlineSuggest.enabled": true,
+  "explorer.confirmDragAndDrop": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "[solidity]": {
+    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+  },
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "always",
+      "source.organizeImports": "always"
+    },
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "git.autofetch": true,
+  "git.detectSubmodules": false,
+  "git.autoRepositoryDetection": "openEditors",
+
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "solidity.telemetry": true,
+  // "solidity.formatter": "forge",
+
+  "terminal.integrated.fontFamily": "JetBrains Mono",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "rust": false,
+    "go": true
+  },
+
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "update.showReleaseNotes": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "github.copilot.advanced": {},
+  "liveServer.settings.donotShowInfoMsg": true,
+  "window.zoomLevel": -1,
+  "go.toolsManagement.autoUpdate": true,
+  "go.formatTool": "gofmt",
+  "gitlens.ai.experimental.generateCommitMessage.enabled": false,
+  "git.confirmSync": false,
+  "nxConsole.showNodeVersionOnStartup": false,
+  "git.enableSmartCommit": true,
+  "gitlens.advanced.messages": {
+    "suppressCreatePullRequestPrompt": true
+  },
+  "githubPullRequests.createOnPublishBranch": "never",
+  "githubPullRequests.pullBranch": "never",
+  "gitlens.graph.layout": "editor",
+  "[yaml]": {
+    "editor.formatOnSave": false
+  },
+  "githubPullRequests.terminalLinksHandler": "github",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "Cargo.toml": "Cargo.lock",
+    "*.ts": "${capture}.typegen.ts",
+    "*.tsx": "${capture}.typegen.ts",
+    "*.mts": "${capture}.typegen.ts",
+    "*.cts": "${capture}.typegen.ts"
+  },
+  "supermaven.otherWarning": false,
+  "workbench.startupEditor": "none",
+  "redhat.telemetry.enabled": true,
+  "diffEditor.renderSideBySide": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "vs-kubernetes": {
+    "vscode-kubernetes.minikube-path-mac": "/Users/williamxuan/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
+    "vs-kubernetes.crd-code-completion": "enabled"
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "rust-analyzer.cargo.features": ["optimism"],
+  "ruff.nativeServer": true,
+  "remote.SSH.remotePlatform": {
+    "*.gitpod.io": "linux"
+  },
+  "solidity.formatter": "forge",
+  "explorer.confirmDelete": false,
+  "git.openRepositoryInParentFolders": "always",
+  "supermaven.enableFixWithSupermaven": true,
+  "terminal.integrated.fontSize": 13
+}

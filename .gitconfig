@@ -1,0 +1,26 @@
+# This is Git's per-user configuration file.
+[user]
+	name = mergd
+	email = 24722014+mergd@users.noreply.github.com
+# Please adapt and uncomment the following lines:
+#	name = William Xuan
+#	email = williamxuan@MacBook-Air.local
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[http]
+	postBuffer = 524288000
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[alias]
+	sync = !git fetch origin && git reset --hard origin/$(git branch --show-current)
+	nuke = !git reset --hard HEAD && git clean -fd
+	fresh = !git fetch --all --prune && git reset --hard origin/$(git branch --show-current)
+[pull]
+	rebase = false
+[branch]
+	autoSetupMerge = always
