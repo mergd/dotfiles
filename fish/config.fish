@@ -1,6 +1,8 @@
 fish_add_path -a /Users/william/.foundry/bin
 # Default editor for claude code
 set -gx VISUAL code
+alias code="cursor"
+
 
 
 
@@ -32,37 +34,39 @@ end
 # pnpm end
 
 # Load environment variables from a .env file
-function load_env_vars -d "Load variables from a .env file"
-    set lines (cat $argv | string split '\n')
-    for line in $lines
+function sourceenv -d "Load environment variables from a .env file"
+    # Default to .env if no argument provided
+    set -l env_file (test (count $argv) -gt 0; and echo $argv[1]; or echo ".env")
+    
+    if not test -f $env_file
+        echo "Error: Environment file '$env_file' not found" >&2
+        return 1
+    end
+    
+    # Read file line by line
+    while read -l line
         # Skip empty lines and comments
-        if test -z "$line"; or string match -q -r '^\s*#' "$line"
+        if test -z "$line"; or string match -q "#*" "$line"
             continue
         end
         
-        # Remove any inline comments
-        set line (string replace -r '\s*#.*$' '' "$line")
-        
-        # Split into key and value, handling quoted values
-        set arr (string split -m 1 '=' "$line")
-        if test (count $arr) -eq 2
-            # Trim whitespace from both key and value
-            set key (string trim "$arr[1]")
-            set value (string trim "$arr[2]")
+        # Check if line contains an assignment
+        if string match -qr '^[[:space:]]*([A-Za-z_][A-Za-z0-9_]*)=(.*)$' "$line"
+            set -l parts (string split -m 1 '=' "$line")
+            set -l var_name (string trim $parts[1])
+            set -l var_value (string trim $parts[2])
             
-            # Handle quoted values (both single and double quotes)
-            if string match -q -r '^".*"$' "$value"
-                set value (string sub -s 2 -e -1 -- "$value")
-            else if string match -q -r "^'.*'\$" "$value"
-                set value (string sub -s 2 -e -1 -- "$value")
+            # Remove surrounding quotes if present
+            if string match -qr '^".*"$' $var_value
+                set var_value (string sub -s 2 -e -1 $var_value)
+            else if string match -qr "^'.*'\$" $var_value
+                set var_value (string sub -s 2 -e -1 $var_value)
             end
             
-            # Only set if key is valid
-            if string match -q -r '^[a-zA-Z_][a-zA-Z0-9_]*$' "$key"
-                set -gx "$key" "$value"
-            end
+            # Export the variable
+            set -gx $var_name $var_value
         end
-    end
+    end < $env_file
 end
 
 # Added by OrbStack: command-line tools and integration
@@ -76,3 +80,11 @@ source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
 
 
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/william/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/william/Downloads/google-cloud-sdk/path.fish.inc'; end

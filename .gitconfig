@@ -24,3 +24,5 @@
 	rebase = false
 [branch]
 	autoSetupMerge = always
+[core]
+	editor = cursor
