@@ -34,7 +34,7 @@ end
 # pnpm end
 
 # Load environment variables from a .env file
-function sourceenv -d "Load environment variables from a .env file"
+function fsource -d "Load environment variables from a .env file"
     # Default to .env if no argument provided
     set -l env_file (test (count $argv) -gt 0; and echo $argv[1]; or echo ".env")
     
