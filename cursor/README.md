@@ -5,12 +5,7 @@ Symlinked configuration for Cursor editor.
 ## Setup on New Machine
 
 ```bash
-# Clone your dotfiles
-git clone <your-repo-url> ~/dotfiles
-cd ~/dotfiles
 
-# Create Cursor User directory if it doesn't exist
-mkdir -p ~/Library/Application\ Support/Cursor/User
 
 # Create symlinks
 ln -sf ~/dotfiles/cursor/settings.json ~/Library/Application\ Support/Cursor/User/settings.json
