@@ -32,3 +32,8 @@
 	gpgsign = true
 [rerere]
 	enabled = true
+[color]
+	ui = auto
+	status = auto
+	diff = auto
+	branch = auto
