@@ -57,8 +57,7 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.fontFamily": "JetBrains Mono Nerd Font",
-  "terminal.integrated.fontFamily": "JetBrains Mono Nerd Font",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[css]": {
@@ -125,5 +124,6 @@
   "workbench.colorTheme": "Default Dark Modern",
   "diffEditor.ignoreTrimWhitespace": false,
   "cursor.rpcFileLogger.enabled": true,
-  "cursor.enable_agent_window_setting": true
+  "cursor.enable_agent_window_setting": true,
+  "cursor.agent_layout_browser_beta_setting": true
 }

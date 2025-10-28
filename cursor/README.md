@@ -39,4 +39,3 @@ git push
 - `keybindings.json` - Keyboard shortcuts
 - `snippets/` - Code snippets
 - `extensions.txt` - Installed extensions list
-

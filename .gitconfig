@@ -2,6 +2,7 @@
 [user]
 	name = mergd
 	email = 24722014+mergd@users.noreply.github.com
+	signingkey = 6EF4B10FF1A90733
 # Please adapt and uncomment the following lines:
 #	name = William Xuan
 #	email = williamxuan@MacBook-Air.local
@@ -9,6 +10,7 @@
 	defaultBranch = main
 [push]
 	autoSetupRemote = true
+	default = current
 [http]
 	postBuffer = 524288000
 [filter "lfs"]
@@ -26,3 +28,7 @@
 	autoSetupMerge = always
 [core]
 	editor = cursor
+[commit]
+	gpgsign = true
+[rerere]
+	enabled = true
