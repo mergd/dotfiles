@@ -16,9 +16,9 @@ function tide_backup -d "Backup Tide prompt configuration"
     set -l timestamp (date +%Y%m%d_%H%M%S)
     set -l backup_file "$backup_dir/tide_config_$timestamp.fish"
     
+    # Use fish_variables format to preserve special characters
     echo "# Tide configuration backup from $timestamp" > $backup_file
-    echo "set -gx _tide_left_items $_tide_left_items" >> $backup_file
-    echo "set -gx _tide_right_items $_tide_right_items" >> $backup_file
+    grep "^SETUVAR _tide_" ~/.config/fish/fish_variables >> $backup_file
     
     echo "✓ Tide configuration backed up to $backup_file"
 end
@@ -36,6 +36,20 @@ function tide_restore -d "Restore Tide configuration from backup"
         return 1
     end
     
-    source "$backup_dir/$latest"
+    # Parse the backup file and restore variables
+    while read -l line
+        if string match -q "SETUVAR*" $line
+            set -l parts (string split ":" $line)
+            set -l var_name $parts[2]
+            set -l var_value (string join ":" $parts[3..])
+            
+            # Decode escaped characters
+            set var_value (string unescape $var_value)
+            
+            # Use universal variables to match fish_variables format
+            eval "set -U $var_name $var_value"
+        end
+    end < "$backup_dir/$latest"
+    
     echo "✓ Restored from $latest"
 end
