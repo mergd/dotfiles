@@ -47,11 +47,12 @@ ${BOLD}OPTIONS:${RESET}
     -h, --help          Show this help message
 
 ${BOLD}APPS INSTALLED:${RESET}
-    Productivity:   Notion, Raycast, CleanShot, Dropover, 1Password
+    Productivity:   Notion, Raycast, CleanShot, Dropover, 1Password, Clipy
     Communication:  Slack, Zoom, WhatsApp*, Discord*, Telegram*
     Browsers:       Arc, Chrome
-    Development:    Ghostty
+    Development:    Ghostty, Postico
     Learning:       Anki
+    Music:          Spotify*
     
     CLI Tools:      git, gh, jq, ripgrep, fzf, bat, eza, htop, wget,
                     fd, tree, glow, neovim, tmux, git-delta, httpie,
@@ -150,6 +151,15 @@ is_app_installed() {
         "ghostty")
             [ -d "/Applications/Ghostty.app" ] || [ -d "$HOME/Applications/Ghostty.app" ]
             ;;
+        "postico")
+            [ -d "/Applications/Postico.app" ] || [ -d "$HOME/Applications/Postico.app" ]
+            ;;
+        "clipy")
+            [ -d "/Applications/Clipy.app" ] || [ -d "$HOME/Applications/Clipy.app" ]
+            ;;
+        "spotify")
+            [ -d "/Applications/Spotify.app" ] || [ -d "$HOME/Applications/Spotify.app" ]
+            ;;
         *)
             local capitalized="$(tr '[:lower:]' '[:upper:]' <<< ${app_name:0:1})${app_name:1}"
             [ -d "/Applications/${capitalized}.app" ] || [ -d "$HOME/Applications/${capitalized}.app" ]
@@ -163,6 +173,7 @@ PRODUCTIVITY_APPS=(
     "cleanshot"
     "1password"
     "anki"
+    "clipy"
 )
 
 COMMUNICATION_APPS=(
@@ -173,6 +184,7 @@ COMMUNICATION_APPS=(
 SOCIAL_APPS=(
     "whatsapp"
     "discord"
+    "spotify"
 )
 
 BROWSER_APPS=(
@@ -182,6 +194,7 @@ BROWSER_APPS=(
 
 DEV_APPS=(
     "ghostty"
+    "postico"
 )
 
 BREW_UTILS=(
