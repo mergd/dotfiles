@@ -1,12 +1,19 @@
-# Git output colors
+# Git output colors with URL highlighting
 git config --global color.ui auto
 git config --global color.status auto
 git config --global color.diff auto
 git config --global color.branch auto
+git config --global color.pager true
 
-# Fish syntax highlighting
+# Git decoration colors - URLs show in cyan
+git config --global color.decorate.remote cyan
+git config --global color.decorate.branch green
+git config --global color.decorate.tag yellow
+git config --global color.decorate.HEAD bold
+
+# Fish syntax highlighting - enable link coloring
 set fish_color_valid_path --underline
-set fish_color_link cyan
+set fish_pager_color_prefix brwhite --bold --underline
 
 # Tide backup and restore functions
 function tide_backup -d "Backup Tide prompt configuration"
@@ -16,7 +23,6 @@ function tide_backup -d "Backup Tide prompt configuration"
     set -l timestamp (date +%Y%m%d_%H%M%S)
     set -l backup_file "$backup_dir/tide_config_$timestamp.fish"
     
-    # Use fish_variables format to preserve special characters
     echo "# Tide configuration backup from $timestamp" > $backup_file
     grep "^SETUVAR _tide_" ~/.config/fish/fish_variables >> $backup_file
     
@@ -36,20 +42,15 @@ function tide_restore -d "Restore Tide configuration from backup"
         return 1
     end
     
-    # Parse the backup file and restore variables
     while read -l line
         if string match -q "SETUVAR*" $line
             set -l parts (string split ":" $line)
             set -l var_name $parts[2]
             set -l var_value (string join ":" $parts[3..])
-            
-            # Decode escaped characters
             set var_value (string unescape $var_value)
-            
-            # Use universal variables to match fish_variables format
             eval "set -U $var_name $var_value"
         end
     end < "$backup_dir/$latest"
     
     echo "✓ Restored from $latest"
-end
+end 
