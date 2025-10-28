@@ -37,3 +37,10 @@
 	status = auto
 	diff = auto
 	branch = auto
+	pager = true
+	remote = cyan
+[color "decorate"]
+	remote = cyan
+	branch = green
+	tag = yellow
+	HEAD = bold
