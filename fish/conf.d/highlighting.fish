@@ -1,19 +1,11 @@
-# Git output colors with URL highlighting
+# Git output colors
 git config --global color.ui auto
 git config --global color.status auto
 git config --global color.diff auto
 git config --global color.branch auto
-git config --global color.pager true
 
-# Git decoration colors - URLs show in cyan
-git config --global color.decorate.remote cyan
-git config --global color.decorate.branch green
-git config --global color.decorate.tag yellow
-git config --global color.decorate.HEAD bold
-
-# Fish syntax highlighting - enable link coloring
+# Fish syntax highlighting
 set fish_color_valid_path --underline
-set fish_pager_color_prefix brwhite --bold --underline
 
 # Tide backup and restore functions
 function tide_backup -d "Backup Tide prompt configuration"
