@@ -1,5 +1,9 @@
-fish_add_path -a /Users/william/.foundry/bin
-# Default editor for claude code
+# Foundry
+if test -d $HOME/.foundry/bin
+    fish_add_path -a $HOME/.foundry/bin
+end
+
+# Default editor
 set -gx VISUAL code
 alias code="cursor"
 
@@ -7,8 +11,7 @@ alias code="cursor"
 alias gcspprd="gcloud config set project infinite-production-446115"
 alias gcspsdbx="gcloud config set project infinite-sandbox-456108"
 
-
-
+# API Keys
 
 
 # Enhanced 'take' command - clones git repo and creates initial folder
@@ -31,11 +34,12 @@ set -g fish_greeting
 
 
 # pnpm
-set -gx PNPM_HOME "/Users/william/Library/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+set -gx PNPM_HOME "$HOME/Library/pnpm"
+if test -d $PNPM_HOME
+    if not string match -q -- $PNPM_HOME $PATH
+        set -gx PATH "$PNPM_HOME" $PATH
+    end
 end
-# pnpm end
 
 # Load environment variables from a .env file
 function fsource -d "Load environment variables from a .env file"
@@ -90,8 +94,10 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/william/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/william/Downloads/google-cloud-sdk/path.fish.inc'; end
+# Google Cloud SDK
+if test -f "$HOME/Downloads/google-cloud-sdk/path.fish.inc"
+    source "$HOME/Downloads/google-cloud-sdk/path.fish.inc"
+end
 set -gx NODE_ENV development
 set -gx NODE_ENV development
 set -gx SCARF_ANALYTICS false
