@@ -1,129 +1,130 @@
 {
-  "terminal.integrated.sendKeybindingsToShell": true,
-  "terminal.integrated.defaultProfile.osx": "fish",
-  "terminal.integrated.profiles.osx": {
-    "fish": {
-      "path": "/opt/homebrew/bin/fish"
-    }
-  },
-  "tailwindCSS.includeLanguages": {
-    "html": "html",
-    "javascript": "javascript",
-    "css": "css"
-  },
-  "editor.quickSuggestions": {
-    "strings": true
-  },
-  "tailwind-class-sorter.classRegex": {
-    "rescript": [
-      "className\\w*?=\\w*(\"[\\s\\S]+?\")|className\\w*?=\\w*?\\{([\\s\\S]+?)\\}",
-      "\"(.+?)\""
-    ]
-  },
-  "workbench.settings.editor": "json",
-  "python.terminal.activateEnvironment": false,
-  "terminal.external.osxExec": "iTerm.app",
-  "terminal.explorerKind": "external",
-  "workbench.sideBar.location": "right",
-  "editor.inlineSuggest.enabled": true,
-  "explorer.confirmDragAndDrop": false,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.formatOnSave": true,
-  "[solidity]": {
-    "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
-  },
-  "[python]": {
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll": "always",
-      "source.organizeImports": "always"
-    },
-    "editor.defaultFormatter": "charliermarsh.ruff"
-  },
-  "git.autofetch": true,
-  "git.detectSubmodules": false,
-  "git.autoRepositoryDetection": "openEditors",
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-  "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.inlineSuggest.suppressSuggestions": true,
-  "update.showReleaseNotes": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "liveServer.settings.donotShowInfoMsg": true,
-  "window.zoomLevel": -1,
-  "go.toolsManagement.autoUpdate": true,
-  "go.formatTool": "gofmt",
-  "git.confirmSync": false,
-  "nxConsole.showNodeVersionOnStartup": false,
-  "git.enableSmartCommit": true,
-  "gitlens.advanced.messages": {
-    "suppressCreatePullRequestPrompt": true
-  },
-  "workbench.colorCustomizations": {
-    "sideBar.foreground": "#CCCCCC",
-    "gitDecoration.addedResourceForeground": "#00ff00" // bright green
-  },
-  "githubPullRequests.createOnPublishBranch": "never",
-  "githubPullRequests.pullBranch": "never",
-  "gitlens.graph.layout": "editor",
-  "[yaml]": {
-    "editor.formatOnSave": false
-  },
-  "githubPullRequests.terminalLinksHandler": "github",
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.patterns": {
-    "Cargo.toml": "Cargo.lock",
-    "*.ts": "${capture}.typegen.ts",
-    "*.tsx": "${capture}.typegen.ts",
-    "*.mts": "${capture}.typegen.ts",
-    "*.cts": "${capture}.typegen.ts"
-  },
-  "workbench.startupEditor": "none",
-  "diffEditor.renderSideBySide": false,
-  "security.workspace.trust.untrustedFiles": "open",
-  "explorer.confirmDelete": false,
-  "git.openRepositoryInParentFolders": "always",
-  "terminal.integrated.fontSize": 13,
-  "makefile.configureOnOpen": true,
-  "biome.suggestInstallingGlobally": false,
-  "cursor.cpp.enablePartialAccepts": true,
-  "cursor.composer.shouldChimeAfterChatFinishes": true,
-  "cursor.cpp.disabledLanguages": ["plaintext"],
-  "cursor.general.globalCursorIgnoreList": [
-    "**/credentials.json",
-    "**/credentials.*.json",
-    "**/secret.json",
-    "**/secrets.json",
-    "**/*.key",
-    "**/*.pem",
-    "**/*.pfx",
-    "**/*.p12",
-    "**/*.crt",
-    "**/*.cer",
-    "**/id_rsa",
-    "**/id_dsa",
-    "**/.ssh/id_*"
-  ],
-  "workbench.colorTheme": "Default Dark Modern",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "cursor.rpcFileLogger.enabled": true,
-  "cursor.enable_agent_window_setting": true,
-  "cursor.agent_layout_browser_beta_setting": true
+	"terminal.integrated.sendKeybindingsToShell": true,
+	"terminal.integrated.defaultProfile.osx": "fish",
+	"terminal.integrated.profiles.osx": {
+		"fish": {
+			"path": "/opt/homebrew/bin/fish"
+		}
+	},
+	"tailwindCSS.includeLanguages": {
+		"html": "html",
+		"javascript": "javascript",
+		"css": "css"
+	},
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"tailwind-class-sorter.classRegex": {
+		"rescript": [
+			"className\\w*?=\\w*(\"[\\s\\S]+?\")|className\\w*?=\\w*?\\{([\\s\\S]+?)\\}",
+			"\"(.+?)\""
+		]
+	},
+	"workbench.settings.editor": "json",
+	"python.terminal.activateEnvironment": false,
+	"terminal.external.osxExec": "iTerm.app",
+	"terminal.explorerKind": "external",
+	"workbench.sideBar.location": "right",
+	"editor.inlineSuggest.enabled": true,
+	"explorer.confirmDragAndDrop": false,
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.formatOnSave": true,
+	"[solidity]": {
+		"editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
+	},
+	"[python]": {
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll": "always",
+			"source.organizeImports": "always"
+		},
+		"editor.defaultFormatter": "charliermarsh.ruff"
+	},
+	"gitlens.ai.enabled": false,
+	"git.autofetch": true,
+	"git.detectSubmodules": false,
+	"git.autoRepositoryDetection": "openEditors",
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+	"terminal.integrated.enableMultiLinePasteWarning": "never",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"editor.inlineSuggest.suppressSuggestions": true,
+	"update.showReleaseNotes": false,
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"liveServer.settings.donotShowInfoMsg": true,
+	"window.zoomLevel": -1,
+	"go.toolsManagement.autoUpdate": true,
+	"go.formatTool": "gofmt",
+	"git.confirmSync": false,
+	"nxConsole.showNodeVersionOnStartup": false,
+	"git.enableSmartCommit": true,
+	"gitlens.advanced.messages": {
+		"suppressCreatePullRequestPrompt": true
+	},
+	"workbench.colorCustomizations": {
+		"sideBar.foreground": "#CCCCCC",
+		"gitDecoration.addedResourceForeground": "#00ff00" // bright green
+	},
+	"githubPullRequests.createOnPublishBranch": "never",
+	"githubPullRequests.pullBranch": "never",
+	"gitlens.graph.layout": "editor",
+	"[yaml]": {
+		"editor.formatOnSave": false
+	},
+	"githubPullRequests.terminalLinksHandler": "github",
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.patterns": {
+		"Cargo.toml": "Cargo.lock",
+		"*.ts": "${capture}.typegen.ts",
+		"*.tsx": "${capture}.typegen.ts",
+		"*.mts": "${capture}.typegen.ts",
+		"*.cts": "${capture}.typegen.ts"
+	},
+	"workbench.startupEditor": "none",
+	"diffEditor.renderSideBySide": false,
+	"security.workspace.trust.untrustedFiles": "open",
+	"explorer.confirmDelete": false,
+	"git.openRepositoryInParentFolders": "always",
+	"terminal.integrated.fontSize": 13,
+	"makefile.configureOnOpen": true,
+	"biome.suggestInstallingGlobally": false,
+	"cursor.cpp.enablePartialAccepts": true,
+	"cursor.composer.shouldChimeAfterChatFinishes": true,
+	"cursor.cpp.disabledLanguages": ["plaintext"],
+	"cursor.general.globalCursorIgnoreList": [
+		"**/credentials.json",
+		"**/credentials.*.json",
+		"**/secret.json",
+		"**/secrets.json",
+		"**/*.key",
+		"**/*.pem",
+		"**/*.pfx",
+		"**/*.p12",
+		"**/*.crt",
+		"**/*.cer",
+		"**/id_rsa",
+		"**/id_dsa",
+		"**/.ssh/id_*"
+	],
+	"workbench.colorTheme": "Default Dark Modern",
+	"diffEditor.ignoreTrimWhitespace": false,
+	"cursor.rpcFileLogger.enabled": true,
+	"cursor.enable_agent_window_setting": true,
+	"cursor.agent_layout_browser_beta_setting": true
 }

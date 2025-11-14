@@ -1,9 +1,3 @@
-# Git output colors
-git config --global color.ui auto
-git config --global color.status auto
-git config --global color.diff auto
-git config --global color.branch auto
-
 # Fish syntax highlighting
 set fish_color_valid_path --underline
 
