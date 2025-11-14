@@ -150,3 +150,10 @@ abbr kgp 'kubectl get pods'
 abbr make 'gmake'
 abbr glci 'golangci-lint run --fix'
 abbr python 'python3'
+
+# GCP Project Management
+abbr gcadl 'gcloud auth application-default login'
+abbr gcps 'gcloud config set project'
+abbr gcpsprd 'gcloud config set project infinite-production-446115'
+abbr gcpsdbx 'gcloud config set project infinite-sandbox-456108'
+abbr gcpgp 'gcloud config get-value project'
