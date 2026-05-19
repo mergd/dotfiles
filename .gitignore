@@ -5,3 +5,8 @@ vscode/globalStorage/
 fish/fishd.tmp.*
 fish/fish_variables
 .gitconfig
+.env
+.env.*
+!.env.example
+fish/config.fish.backup*
+fish/config.fish.tmp

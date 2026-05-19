@@ -1,3 +1,6 @@
+# Explicitly unset NODE_ENV - let Next.js manage it
+set -e NODE_ENV
+
 # Foundry
 if test -d $HOME/.foundry/bin
     fish_add_path -a $HOME/.foundry/bin
@@ -98,8 +101,6 @@ set --export PATH $BUN_INSTALL/bin $PATH
 if test -f "$HOME/Downloads/google-cloud-sdk/path.fish.inc"
     source "$HOME/Downloads/google-cloud-sdk/path.fish.inc"
 end
-set -gx NODE_ENV development
-set -gx NODE_ENV development
 set -gx SCARF_ANALYTICS false
 set -gx SCARF_ANALYTICS false
 
@@ -108,3 +109,13 @@ function rld -d "Reload Fish configuration"
     source ~/.config/fish/config.fish
     echo "🐟 Fish config reloaded!"
 end
+
+# Added by Antigravity
+fish_add_path /Users/william/.antigravity/antigravity/bin
+
+fish_add_path -a "/Users/william/.foundry/bin"
+fish_add_path -p ~/.local/bin
+
+# Added by Raindrop installer
+fish_add_path "$HOME/.raindrop/bin"
+# End Raindrop installer

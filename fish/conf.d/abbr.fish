@@ -141,7 +141,7 @@ abbr gpm 'gh pr merge'
 
 # Kubernetes
 abbr k 'kubectl'
-abbr gcal 'gcloud components update; and gcloud auth login'
+abbr gcal 'gcloud components update; and gcloud auth login --update-adc'
 abbr kns 'kubens'
 abbr kc 'kubectx'
 abbr kgp 'kubectl get pods'

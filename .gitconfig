@@ -2,7 +2,7 @@
 [user]
 	name = mergd
 	email = 24722014+mergd@users.noreply.github.com
-	signingkey = 06E6D6CBBE975856
+	signingkey = 6EF4B10FF1A90733
 # Please adapt and uncomment the following lines:
 #	name = William Xuan
 #	email = williamxuan@MacBook-Air.local
@@ -37,3 +37,9 @@
 	status = auto
 	diff = auto
 	branch = auto
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
