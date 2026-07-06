@@ -50,13 +50,13 @@ ${BOLD}APPS INSTALLED:${RESET}
     Productivity:   Notion, Raycast, CleanShot, Dropover, 1Password, Clipy
     Communication:  Slack, Zoom, WhatsApp*, Discord*, Telegram*
     Browsers:       Arc, Chrome
-    Development:    Ghostty, Postico
+    Development:    Ghostty, Postico, Codex, Claude Code, Codex App
     Learning:       Anki
     Music:          Spotify*
     
     CLI Tools:      git, gh, jq, ripgrep, fzf, bat, eza, htop, wget,
                     fd, tree, glow, neovim, tmux, git-delta, httpie,
-                    lazygit, zoxide, direnv, starship
+                    lazygit, zoxide, direnv, starship, terraform
 
     * Excluded in work mode
 
@@ -154,6 +154,15 @@ is_app_installed() {
         "postico")
             [ -d "/Applications/Postico.app" ] || [ -d "$HOME/Applications/Postico.app" ]
             ;;
+        "codex")
+            brew list --cask codex &> /dev/null || command -v codex &> /dev/null
+            ;;
+        "claude-code")
+            brew list --cask claude-code &> /dev/null || command -v claude &> /dev/null
+            ;;
+        "codex-app")
+            [ -d "/Applications/Codex.app" ] || [ -d "$HOME/Applications/Codex.app" ]
+            ;;
         "clipy")
             [ -d "/Applications/Clipy.app" ] || [ -d "$HOME/Applications/Clipy.app" ]
             ;;
@@ -195,6 +204,9 @@ BROWSER_APPS=(
 DEV_APPS=(
     "ghostty"
     "postico"
+    "codex"
+    "claude-code"
+    "codex-app"
 )
 
 BREW_UTILS=(
@@ -218,10 +230,23 @@ BREW_UTILS=(
     "zoxide"
     "direnv"
     "starship"
+    "terraform"
 )
 
 install_brew_utils() {
     print_header "Installing Homebrew Utilities"
+
+    if [[ " ${BREW_UTILS[*]} " == *" terraform "* ]]; then
+        if ! brew tap | grep -qx "hashicorp/tap"; then
+            if $DRY_RUN; then
+                print_info "Would tap: hashicorp/tap"
+            else
+                print_info "Tapping hashicorp/tap..."
+                brew tap hashicorp/tap
+                print_success "hashicorp/tap tapped"
+            fi
+        fi
+    fi
     
     for util in "${BREW_UTILS[@]}"; do
         if brew list "$util" &> /dev/null; then
