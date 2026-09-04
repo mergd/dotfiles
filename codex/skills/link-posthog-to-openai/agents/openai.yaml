@@ -1,0 +1,4 @@
+interface:
+  display_name: "Link PostHog to OpenAI"
+  short_description: "Send Codex OTel telemetry to a PostHog project safely"
+  default_prompt: "Configure Codex OpenTelemetry export to my PostHog project using credentials from ap, without exposing secrets or logging prompt content."
