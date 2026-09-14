@@ -2,7 +2,7 @@
 [user]
 	name = mergd
 	email = 24722014+mergd@users.noreply.github.com
-	signingkey = 6EF4B10FF1A90733
+	signingkey = 2130454D3FCFD17F895AD3A106E6D6CBBE975856
 # Please adapt and uncomment the following lines:
 #	name = William Xuan
 #	email = williamxuan@MacBook-Air.local
@@ -43,3 +43,5 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[tag]
+	gpgsign = true
